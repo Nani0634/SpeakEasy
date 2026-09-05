@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  /* Updated to be semi-transparent so gradients can shine through */
   --background: transparent;
   --foreground: #0f172a;
 
@@ -11,7 +10,6 @@
 
   --accent: #2563eb;
 
-  /* Updated card default to match the glass look if used elsewhere */
   --card: rgba(255, 255, 255, 0.3);
   --secondary: #64748b;
   --border: rgba(255, 255, 255, 0.4);
@@ -30,18 +28,16 @@ html {
 
 body {
   margin: 0;
-  /* Removed the solid background property here so your layout.tsx gradient works! */
   color: var(--foreground);
   font-family: Inter, system-ui, sans-serif;
 }
 
+/* FIXED: Removed the 'background: transparent' rule that was hiding your buttons! */
 button,
 input,
 textarea,
 select {
   font: inherit;
-  /* Added to ensure inputs support the glass look */
-  background: transparent; 
 }
 
 button {
