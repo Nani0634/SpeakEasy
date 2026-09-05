@@ -61,27 +61,28 @@ const scenarios = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    // Removed solid bg-slate-50 to let the layout gradient show through
+    <main className="min-h-screen">
 
       {/* =====================================================
           HERO SECTION
       ====================================================== */}
-      <section className="overflow-hidden bg-white">
+      <section className="relative overflow-hidden pt-10">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
           
           {/* Hero Text */}
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-green-50 px-4 py-2 text-sm font-semibold text-green-700">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/40 backdrop-blur-md border border-white/50 shadow-sm px-4 py-2 text-sm font-semibold text-teal-800">
               <span>🌱</span>
               <span>Build confidence by speaking</span>
             </div>
 
             <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
               Practice English by{" "}
-              <span className="text-green-600">Talking</span>
+              <span className="text-teal-600 drop-shadow-sm">Talking</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">
               Build your confidence through simple, real-life conversations
               with your personal AI speaking partner.
             </p>
@@ -89,37 +90,36 @@ export default function Home() {
             {/* Hero Buttons */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a href="/signup">
-                <Button size="large">
+                <Button size="large" className="shadow-lg hover:shadow-xl transition-shadow">
                   Start Speaking — It&apos;s Free
-                  <span>→</span>
+                  <span className="ml-2">→</span>
                 </Button>
               </a>
 
               <a href="#how-it-works">
-                <Button variant="outline" size="large">
+                <Button variant="outline" size="large" className="bg-white/30 backdrop-blur-sm border-white/50 hover:bg-white/50">
                   See How It Works
                 </Button>
               </a>
             </div>
 
-            <p className="mt-5 text-sm text-slate-500">
+            <p className="mt-5 text-sm text-slate-600 font-medium">
               No English partner? No problem. Practice anytime.
             </p>
           </div>
 
-          {/* AI Conversation Demo */}
+          {/* AI Conversation Demo - Glassmorphism */}
           <div className="relative">
-            {/* Decorative circles */}
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-green-100 blur-3xl" />
-
-            <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-blue-100 blur-3xl" />
+            {/* Decorative circles underneath the glass */}
+            <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-teal-300/40 blur-3xl mix-blend-multiply" />
+            <div className="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-purple-300/40 blur-3xl mix-blend-multiply" />
 
             {/* Conversation Card */}
-            <Card className="relative p-5 shadow-xl sm:p-7">
+            <Card className="relative p-5 shadow-2xl sm:p-7 bg-white/30 backdrop-blur-xl border border-white/50">
               
               {/* AI Header */}
-              <div className="mb-6 flex items-center gap-3 border-b border-slate-100 pb-5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-green-100 text-xl">
+              <div className="mb-6 flex items-center gap-3 border-b border-white/30 pb-5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md text-xl">
                   🤖
                 </div>
 
@@ -128,8 +128,8 @@ export default function Home() {
                     Alex
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm text-slate-500">
-                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <span className="h-2 w-2 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.8)]" />
                     AI Speaking Partner
                   </div>
                 </div>
@@ -137,12 +137,12 @@ export default function Home() {
 
               {/* AI Message */}
               <div className="mb-5 flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-100">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md">
                   🤖
                 </div>
 
-                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-slate-100 px-4 py-3">
-                  <p className="text-sm leading-6 text-slate-700">
+                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-white/60 backdrop-blur-md border border-white/50 shadow-sm px-4 py-3">
+                  <p className="text-sm leading-6 text-slate-800">
                     Hi! Nice to meet you. What&apos;s your name?
                   </p>
                 </div>
@@ -150,7 +150,7 @@ export default function Home() {
 
               {/* User Message */}
               <div className="mb-5 flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-green-600 px-4 py-3">
+                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-teal-600/90 backdrop-blur-md border border-teal-400/30 shadow-md px-4 py-3">
                   <p className="text-sm leading-6 text-white">
                     Hi, my name is Nikhil.
                   </p>
@@ -159,22 +159,22 @@ export default function Home() {
 
               {/* AI Message */}
               <div className="mb-6 flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-100">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md">
                   🤖
                 </div>
 
-                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-slate-100 px-4 py-3">
-                  <p className="text-sm leading-6 text-slate-700">
+                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-white/60 backdrop-blur-md border border-white/50 shadow-sm px-4 py-3">
+                  <p className="text-sm leading-6 text-slate-800">
                     Nice to meet you, Nikhil! Where are you from?
                   </p>
                 </div>
               </div>
 
               {/* Voice Button */}
-              <div className="border-t border-slate-100 pt-5">
+              <div className="border-t border-white/30 pt-5">
                 <button
                   type="button"
-                  className="flex min-h-12 w-full items-center justify-center gap-3 rounded-2xl bg-green-50 px-5 py-4 font-semibold text-green-700 transition-colors hover:bg-green-100"
+                  className="flex min-h-12 w-full items-center justify-center gap-3 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 px-5 py-4 font-semibold text-teal-800 shadow-sm transition-all hover:bg-white/70 hover:shadow-md"
                 >
                   <span className="text-xl">🎤</span>
                   Hold to Speak
@@ -188,12 +188,12 @@ export default function Home() {
       {/* =====================================================
           BENEFITS
       ====================================================== */}
-      <section className="bg-slate-50 py-20">
+      <section className="py-20 relative">
         <div className="mx-auto max-w-7xl px-6">
           
           {/* Section Heading */}
           <div className="mx-auto max-w-2xl text-center">
-            <p className="font-semibold text-green-600">
+            <p className="font-semibold tracking-wider text-teal-700">
               WHY SPEAKEASY AI?
             </p>
 
@@ -201,55 +201,49 @@ export default function Home() {
               Learn English by actually using it
             </h2>
 
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-700">
               Practice speaking in a comfortable environment where mistakes
               are part of learning.
             </p>
           </div>
 
-          {/* Benefit Cards */}
+          {/* Benefit Cards - Glassmorphism */}
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             
-            <Card hover>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-2xl">
+            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
                 🗣️
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900">
                 Practice Speaking
               </h3>
-
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-700">
                 Improve your speaking skills through realistic everyday
                 conversations instead of memorizing long lessons.
               </p>
             </Card>
 
-            <Card hover>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-2xl">
+            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
                 🤖
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900">
                 Your AI Partner
               </h3>
-
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-700">
                 Practice anytime with a friendly AI partner who adapts the
                 conversation to your English level.
               </p>
             </Card>
 
-            <Card hover>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-100 text-2xl">
+            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
                 ✨
               </div>
-
               <h3 className="text-xl font-semibold text-slate-900">
                 Simple Corrections
               </h3>
-
-              <p className="mt-3 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-700">
                 Get useful corrections and phrases without being interrupted
                 every time you make a mistake.
               </p>
@@ -264,20 +258,18 @@ export default function Home() {
       ====================================================== */}
       <section
         id="how-it-works"
-        className="bg-white py-20"
+        className="py-20 relative"
       >
         <div className="mx-auto max-w-7xl px-6">
           
           <div className="mx-auto max-w-2xl text-center">
-            <p className="font-semibold text-green-600">
+            <p className="font-semibold tracking-wider text-teal-700">
               HOW IT WORKS
             </p>
-
             <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
               Simple practice. Real improvement.
             </h2>
-
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-slate-700">
               Talk, learn, and repeat. That&apos;s it.
             </p>
           </div>
@@ -285,48 +277,42 @@ export default function Home() {
           <div className="mt-14 grid gap-10 md:grid-cols-3">
             
             {/* Step 1 */}
-            <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 font-bold text-green-700">
+            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
                 01
               </div>
-
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
                 Choose a situation
               </h3>
-
-              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-600">
+              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-700">
                 Pick a real-life situation such as shopping, travel,
                 restaurants, or meeting someone new.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 font-bold text-green-700">
+            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
                 02
               </div>
-
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
                 Talk with AI
               </h3>
-
-              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-600">
+              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-700">
                 Have a natural conversation with your AI speaking partner
                 using simple English.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 font-bold text-green-700">
+            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
                 03
               </div>
-
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
                 Learn &amp; improve
               </h3>
-
-              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-600">
+              <p className="mx-auto mt-3 max-w-sm leading-7 text-slate-700">
                 Review useful corrections, learn new phrases, and practice
                 difficult sentences again.
               </p>
@@ -341,35 +327,33 @@ export default function Home() {
       ====================================================== */}
       <section
         id="practice"
-        className="bg-slate-50 py-20"
+        className="py-20 relative"
       >
         <div className="mx-auto max-w-7xl px-6">
           
           {/* Section Header */}
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="font-semibold text-green-600">
+              <p className="font-semibold tracking-wider text-teal-700">
                 PRACTICE
               </p>
-
               <h2 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">
                 Practice real-life English
               </h2>
-
-              <p className="mt-3 max-w-xl text-slate-600">
+              <p className="mt-3 max-w-xl text-slate-700">
                 Choose a situation you might experience in everyday life.
               </p>
             </div>
 
             <a
               href="/practice"
-              className="font-semibold text-green-600 transition-colors hover:text-green-700"
+              className="font-semibold text-teal-700 transition-colors hover:text-teal-800 bg-white/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/50"
             >
               View all scenarios →
             </a>
           </div>
 
-          {/* Scenario Cards */}
+          {/* Scenario Cards - Glassmorphism */}
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {scenarios.map((scenario) => (
               <a
@@ -377,13 +361,13 @@ export default function Home() {
                 href={scenario.href}
                 className="group block"
               >
-                <Card hover className="h-full">
+                <Card hover className="h-full bg-white/30 backdrop-blur-md border-white/40 shadow-sm transition hover:bg-white/50">
                   <div className="flex items-start justify-between gap-4">
-                    <span className="text-3xl">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
                       {scenario.icon}
                     </span>
 
-                    <span className="text-slate-300 transition-colors group-hover:text-green-500">
+                    <span className="text-slate-400 transition-colors group-hover:text-teal-600">
                       →
                     </span>
                   </div>
@@ -392,7 +376,7 @@ export default function Home() {
                     {scenario.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-2 text-sm leading-6 text-slate-700">
                     {scenario.description}
                   </p>
 
@@ -413,20 +397,22 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          FINAL CTA
+          FINAL CTA - Glassmorphism Panel
       ====================================================== */}
-      <section className="bg-green-600 py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          
-          <div className="text-5xl">
+      <section className="py-20 relative mx-4 sm:mx-6 lg:mx-auto max-w-6xl mb-20 mt-10 rounded-[3rem] bg-teal-800/40 backdrop-blur-xl border border-white/30 shadow-2xl overflow-hidden">
+        {/* Inner glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-purple-500/20 mix-blend-overlay" />
+        
+        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+          <div className="text-5xl drop-shadow-md">
             🌱
           </div>
 
-          <h2 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mt-6 text-3xl font-bold text-slate-900 sm:text-4xl drop-shadow-sm">
             Ready to start speaking?
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-green-50">
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-slate-800 font-medium">
             Your first conversation takes less than 5 minutes.
           </p>
 
@@ -434,7 +420,7 @@ export default function Home() {
             <a href="/signup">
               <button
                 type="button"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-7 text-base font-semibold text-green-700 transition-colors hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white/80 backdrop-blur-md shadow-lg border border-white px-7 text-base font-semibold text-teal-800 transition-all hover:bg-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-600"
               >
                 Start Speaking Free
                 <span>→</span>
@@ -445,9 +431,9 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          FOOTER
+          FOOTER - Dark Glassmorphism
       ====================================================== */}
-      <footer className="bg-slate-950 py-12 text-white">
+      <footer className="bg-slate-900/60 backdrop-blur-xl border-t border-white/10 py-12 text-white">
         <div className="mx-auto max-w-7xl px-6">
           
           <div className="grid gap-10 md:grid-cols-3">
@@ -455,43 +441,31 @@ export default function Home() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 text-lg font-bold">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-600">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500/80 backdrop-blur-sm border border-white/20">
                   💬
                 </span>
-
                 SpeakEasy AI
               </div>
 
-              <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
+              <p className="mt-4 max-w-sm text-sm leading-6 text-slate-300">
                 Practice English. Speak with Confidence.
               </p>
             </div>
 
             {/* Product */}
             <div>
-              <h3 className="font-semibold">
+              <h3 className="font-semibold text-slate-100">
                 Product
               </h3>
 
               <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
-                <a
-                  href="#how-it-works"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="#how-it-works" className="transition-colors hover:text-teal-300">
                   How It Works
                 </a>
-
-                <a
-                  href="/practice"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="/practice" className="transition-colors hover:text-teal-300">
                   Practice
                 </a>
-
-                <a
-                  href="/dashboard"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="/dashboard" className="transition-colors hover:text-teal-300">
                   Dashboard
                 </a>
               </div>
@@ -499,29 +473,18 @@ export default function Home() {
 
             {/* Support */}
             <div>
-              <h3 className="font-semibold">
+              <h3 className="font-semibold text-slate-100">
                 Support
               </h3>
 
               <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
-                <a
-                  href="/profile"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="/profile" className="transition-colors hover:text-teal-300">
                   Profile
                 </a>
-
-                <a
-                  href="/settings"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="/settings" className="transition-colors hover:text-teal-300">
                   Settings
                 </a>
-
-                <a
-                  href="/login"
-                  className="transition-colors hover:text-white"
-                >
+                <a href="/login" className="transition-colors hover:text-teal-300">
                   Login
                 </a>
               </div>
@@ -530,7 +493,7 @@ export default function Home() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-500">
+          <div className="mt-10 border-t border-slate-700/50 pt-6 text-sm text-slate-400">
             © 2026 SpeakEasy AI. All rights reserved.
           </div>
 
