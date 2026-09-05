@@ -30,7 +30,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      {/* ADDED: Global gradient background and text color */}
+      <body className="min-h-full flex flex-col bg-gradient-to-br from-indigo-100 via-purple-50 to-teal-100 text-slate-900 bg-fixed">
+        
         <Navbar />
 
         <div className="flex-1">
@@ -38,6 +40,7 @@ export default function RootLayout({
         </div>
 
         <BottomNavigation />
+        
       </body>
     </html>
   );
