@@ -1,4 +1,3 @@
-import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 
@@ -61,7 +60,6 @@ const scenarios = [
 
 export default function Home() {
   return (
-    // Removed solid bg-slate-50 to let the layout gradient show through
     <main className="min-h-screen">
 
       {/* =====================================================
@@ -87,47 +85,39 @@ export default function Home() {
               with your personal AI speaking partner.
             </p>
 
-            {/* Hero Buttons */}
+            {/* FIXED BUTTONS: Solid Teal for high visibility */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a href="/signup">
-                <Button size="large" className="shadow-lg hover:shadow-xl transition-shadow">
+                <button className="inline-flex items-center justify-center rounded-xl bg-teal-600 px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-xl">
                   Start Speaking — It&apos;s Free
                   <span className="ml-2">→</span>
-                </Button>
+                </button>
               </a>
 
               <a href="#how-it-works">
-                <Button variant="outline" size="large" className="bg-white/30 backdrop-blur-sm border-white/50 hover:bg-white/50">
+                <button className="inline-flex items-center justify-center rounded-xl border border-white/50 bg-white/30 px-8 py-4 text-base font-bold text-teal-900 shadow-sm backdrop-blur-sm transition-all hover:bg-white/50">
                   See How It Works
-                </Button>
+                </button>
               </a>
             </div>
 
-            <p className="mt-5 text-sm text-slate-600 font-medium">
+            <p className="mt-5 text-sm font-medium text-slate-600">
               No English partner? No problem. Practice anytime.
             </p>
           </div>
 
           {/* AI Conversation Demo - Glassmorphism */}
           <div className="relative">
-            {/* Decorative circles underneath the glass */}
             <div className="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-teal-300/40 blur-3xl mix-blend-multiply" />
             <div className="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-purple-300/40 blur-3xl mix-blend-multiply" />
 
-            {/* Conversation Card */}
-            <Card className="relative p-5 shadow-2xl sm:p-7 bg-white/30 backdrop-blur-xl border border-white/50">
-              
-              {/* AI Header */}
+            <Card className="relative border border-white/50 bg-white/30 p-5 shadow-2xl backdrop-blur-xl sm:p-7">
               <div className="mb-6 flex items-center gap-3 border-b border-white/30 pb-5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md text-xl">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/60 text-xl shadow-sm backdrop-blur-md">
                   🤖
                 </div>
-
                 <div>
-                  <p className="font-semibold text-slate-900">
-                    Alex
-                  </p>
-
+                  <p className="font-semibold text-slate-900">Alex</p>
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <span className="h-2 w-2 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(20,184,166,0.8)]" />
                     AI Speaking Partner
@@ -135,46 +125,40 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* AI Message */}
               <div className="mb-5 flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md">
                   🤖
                 </div>
-
-                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-white/60 backdrop-blur-md border border-white/50 shadow-sm px-4 py-3">
+                <div className="max-w-[80%] rounded-2xl rounded-tl-sm border border-white/50 bg-white/60 px-4 py-3 shadow-sm backdrop-blur-md">
                   <p className="text-sm leading-6 text-slate-800">
                     Hi! Nice to meet you. What&apos;s your name?
                   </p>
                 </div>
               </div>
 
-              {/* User Message */}
               <div className="mb-5 flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-teal-600/90 backdrop-blur-md border border-teal-400/30 shadow-md px-4 py-3">
+                <div className="max-w-[80%] rounded-2xl rounded-tr-sm border border-teal-400/30 bg-teal-600/90 px-4 py-3 shadow-md backdrop-blur-md">
                   <p className="text-sm leading-6 text-white">
                     Hi, my name is Nikhil.
                   </p>
                 </div>
               </div>
 
-              {/* AI Message */}
               <div className="mb-6 flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/60 shadow-sm backdrop-blur-md">
                   🤖
                 </div>
-
-                <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-white/60 backdrop-blur-md border border-white/50 shadow-sm px-4 py-3">
+                <div className="max-w-[80%] rounded-2xl rounded-tl-sm border border-white/50 bg-white/60 px-4 py-3 shadow-sm backdrop-blur-md">
                   <p className="text-sm leading-6 text-slate-800">
                     Nice to meet you, Nikhil! Where are you from?
                   </p>
                 </div>
               </div>
 
-              {/* Voice Button */}
               <div className="border-t border-white/30 pt-5">
                 <button
                   type="button"
-                  className="flex min-h-12 w-full items-center justify-center gap-3 rounded-2xl bg-white/50 backdrop-blur-md border border-white/60 px-5 py-4 font-semibold text-teal-800 shadow-sm transition-all hover:bg-white/70 hover:shadow-md"
+                  className="flex min-h-12 w-full items-center justify-center gap-3 rounded-2xl border border-white/60 bg-white/50 px-5 py-4 font-semibold text-teal-800 shadow-sm backdrop-blur-md transition-all hover:bg-white/70 hover:shadow-md"
                 >
                   <span className="text-xl">🎤</span>
                   Hold to Speak
@@ -188,30 +172,24 @@ export default function Home() {
       {/* =====================================================
           BENEFITS
       ====================================================== */}
-      <section className="py-20 relative">
+      <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
-          
-          {/* Section Heading */}
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-semibold tracking-wider text-teal-700">
               WHY SPEAKEASY AI?
             </p>
-
             <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
               Learn English by actually using it
             </h2>
-
             <p className="mt-4 text-slate-700">
               Practice speaking in a comfortable environment where mistakes
               are part of learning.
             </p>
           </div>
 
-          {/* Benefit Cards - Glassmorphism */}
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            
-            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
+            <Card hover className="border-white/40 bg-white/30 shadow-sm backdrop-blur-md">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/50 bg-white/60 text-2xl shadow-sm">
                 🗣️
               </div>
               <h3 className="text-xl font-semibold text-slate-900">
@@ -223,8 +201,8 @@ export default function Home() {
               </p>
             </Card>
 
-            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
+            <Card hover className="border-white/40 bg-white/30 shadow-sm backdrop-blur-md">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/50 bg-white/60 text-2xl shadow-sm">
                 🤖
               </div>
               <h3 className="text-xl font-semibold text-slate-900">
@@ -236,8 +214,8 @@ export default function Home() {
               </p>
             </Card>
 
-            <Card hover className="bg-white/30 backdrop-blur-md border-white/40 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
+            <Card hover className="border-white/40 bg-white/30 shadow-sm backdrop-blur-md">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/50 bg-white/60 text-2xl shadow-sm">
                 ✨
               </div>
               <h3 className="text-xl font-semibold text-slate-900">
@@ -248,7 +226,6 @@ export default function Home() {
                 every time you make a mistake.
               </p>
             </Card>
-
           </div>
         </div>
       </section>
@@ -256,12 +233,8 @@ export default function Home() {
       {/* =====================================================
           HOW IT WORKS
       ====================================================== */}
-      <section
-        id="how-it-works"
-        className="py-20 relative"
-      >
+      <section id="how-it-works" className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
-          
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-semibold tracking-wider text-teal-700">
               HOW IT WORKS
@@ -275,10 +248,8 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid gap-10 md:grid-cols-3">
-            
-            {/* Step 1 */}
-            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
+            <div className="rounded-2xl border border-white/30 bg-white/20 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/50 bg-white/60 text-xl font-bold text-teal-700 shadow-sm">
                 01
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
@@ -290,9 +261,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
+            <div className="rounded-2xl border border-white/30 bg-white/20 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/50 bg-white/60 text-xl font-bold text-teal-700 shadow-sm">
                 02
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
@@ -304,9 +274,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Step 3 */}
-            <div className="text-center rounded-2xl p-6 bg-white/20 backdrop-blur-sm border border-white/30 shadow-sm">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/60 shadow-sm border border-white/50 font-bold text-teal-700 text-xl">
+            <div className="rounded-2xl border border-white/30 bg-white/20 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/50 bg-white/60 text-xl font-bold text-teal-700 shadow-sm">
                 03
               </div>
               <h3 className="mt-5 text-xl font-semibold text-slate-900">
@@ -317,7 +286,6 @@ export default function Home() {
                 difficult sentences again.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -325,13 +293,8 @@ export default function Home() {
       {/* =====================================================
           PRACTICE SCENARIOS
       ====================================================== */}
-      <section
-        id="practice"
-        className="py-20 relative"
-      >
+      <section id="practice" className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
-          
-          {/* Section Header */}
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <p className="font-semibold tracking-wider text-teal-700">
@@ -347,23 +310,22 @@ export default function Home() {
 
             <a
               href="/practice"
-              className="font-semibold text-teal-700 transition-colors hover:text-teal-800 bg-white/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/50"
+              className="rounded-full border border-white/50 bg-white/40 px-4 py-2 font-semibold text-teal-700 shadow-sm backdrop-blur-sm transition-colors hover:bg-white/60 hover:text-teal-800"
             >
               View all scenarios →
             </a>
           </div>
 
-          {/* Scenario Cards - Glassmorphism */}
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {scenarios.map((scenario) => (
               <a
                 key={scenario.title}
                 href={scenario.href}
-                className="group block"
+                className="group block h-full"
               >
-                <Card hover className="h-full bg-white/30 backdrop-blur-md border-white/40 shadow-sm transition hover:bg-white/50">
+                <Card hover className="h-full border-white/40 bg-white/30 shadow-sm backdrop-blur-md transition hover:bg-white/50">
                   <div className="flex items-start justify-between gap-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 border border-white/50 shadow-sm text-2xl">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/50 bg-white/60 text-2xl shadow-sm">
                       {scenario.icon}
                     </span>
 
@@ -381,13 +343,8 @@ export default function Home() {
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    <Badge variant={scenario.variant}>
-                      {scenario.level}
-                    </Badge>
-
-                    <Badge variant="gray">
-                      {scenario.duration}
-                    </Badge>
+                    <Badge variant={scenario.variant}>{scenario.level}</Badge>
+                    <Badge variant="gray">{scenario.duration}</Badge>
                   </div>
                 </Card>
               </a>
@@ -399,20 +356,17 @@ export default function Home() {
       {/* =====================================================
           FINAL CTA - Glassmorphism Panel
       ====================================================== */}
-      <section className="py-20 relative mx-4 sm:mx-6 lg:mx-auto max-w-6xl mb-20 mt-10 rounded-[3rem] bg-teal-800/40 backdrop-blur-xl border border-white/30 shadow-2xl overflow-hidden">
-        {/* Inner glow effect */}
+      <section className="relative mx-4 mb-20 mt-10 max-w-6xl overflow-hidden rounded-[3rem] border border-white/30 bg-teal-800/40 py-20 shadow-2xl backdrop-blur-xl sm:mx-6 lg:mx-auto">
         <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-purple-500/20 mix-blend-overlay" />
         
-        <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
-          <div className="text-5xl drop-shadow-md">
-            🌱
-          </div>
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <div className="text-5xl drop-shadow-md">🌱</div>
 
-          <h2 className="mt-6 text-3xl font-bold text-slate-900 sm:text-4xl drop-shadow-sm">
+          <h2 className="mt-6 text-3xl font-bold text-slate-900 drop-shadow-sm sm:text-4xl">
             Ready to start speaking?
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-slate-800 font-medium">
+          <p className="mx-auto mt-4 max-w-xl text-lg font-medium leading-8 text-slate-800">
             Your first conversation takes less than 5 minutes.
           </p>
 
@@ -420,10 +374,9 @@ export default function Home() {
             <a href="/signup">
               <button
                 type="button"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white/80 backdrop-blur-md shadow-lg border border-white px-7 text-base font-semibold text-teal-800 transition-all hover:bg-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-600"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-teal-700 focus:outline-none"
               >
-                Start Speaking Free
-                <span>→</span>
+                Start Speaking Free <span>→</span>
               </button>
             </a>
           </div>
@@ -433,15 +386,14 @@ export default function Home() {
       {/* =====================================================
           FOOTER - Dark Glassmorphism
       ====================================================== */}
-      <footer className="bg-slate-900/60 backdrop-blur-xl border-t border-white/10 py-12 text-white">
+      <footer className="border-t border-white/10 bg-slate-900/60 py-12 text-white backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-6">
-          
           <div className="grid gap-10 md:grid-cols-3">
             
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 text-lg font-bold">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-500/80 backdrop-blur-sm border border-white/20">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-teal-500/80 backdrop-blur-sm">
                   💬
                 </span>
                 SpeakEasy AI
@@ -454,9 +406,7 @@ export default function Home() {
 
             {/* Product */}
             <div>
-              <h3 className="font-semibold text-slate-100">
-                Product
-              </h3>
+              <h3 className="font-semibold text-slate-100">Product</h3>
 
               <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
                 <a href="#how-it-works" className="transition-colors hover:text-teal-300">
@@ -473,9 +423,7 @@ export default function Home() {
 
             {/* Support */}
             <div>
-              <h3 className="font-semibold text-slate-100">
-                Support
-              </h3>
+              <h3 className="font-semibold text-slate-100">Support</h3>
 
               <div className="mt-4 flex flex-col gap-3 text-sm text-slate-400">
                 <a href="/profile" className="transition-colors hover:text-teal-300">
@@ -492,11 +440,9 @@ export default function Home() {
 
           </div>
 
-          {/* Copyright */}
           <div className="mt-10 border-t border-slate-700/50 pt-6 text-sm text-slate-400">
             © 2026 SpeakEasy AI. All rights reserved.
           </div>
-
         </div>
       </footer>
     </main>
